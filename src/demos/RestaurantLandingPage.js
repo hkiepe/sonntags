@@ -29,7 +29,7 @@ export default () => {
       <Hero
         heading={
           <>
-            Köstlich & Süß <HighlightedText>Im Fedel.</HighlightedText>
+            Köstlich & Süß <HighlightedText>Im Veedel.</HighlightedText>
           </>
         }
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
