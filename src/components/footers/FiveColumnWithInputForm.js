@@ -2,7 +2,7 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 // import { css } from "styled-components/macro"; //eslint-disable-line
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
+// import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 
 //import LogoImage from "images/logo.svg";
 import { ReactComponent as FacebookIcon } from "images/facebook-icon.svg";
@@ -13,7 +13,7 @@ const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-
 const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
 //const SixColumns = tw.div`flex flex-wrap text-center sm:text-left justify-center sm:justify-start md:justify-between -mt-12`;
 
-const Column = tw.div`px-4 sm:px-0 sm:w-1/4 md:w-auto mt-12`;
+// const Column = tw.div`px-4 sm:px-0 sm:w-1/4 md:w-auto mt-12`;
 
 //const ColumnHeading = tw.h5`uppercase font-bold`;
 
@@ -37,7 +37,7 @@ const Divider = tw.div`my-16 border-b-2 border-gray-300 w-full`;
 const ThreeColRow = tw.div`flex flex-col md:flex-row items-center justify-between`;
 
 const LogoContainer = tw.div`flex items-center justify-center md:justify-start`;
-const LogoImg = tw.img`w-8`;
+//const LogoImg = tw.img`w-8`;
 const LogoText = tw.h5`ml-2 text-xl font-black tracking-wider text-gray-800`;
 
 const CopywrightNotice = tw.p`text-center text-sm sm:text-base mt-8 md:mt-0 font-medium text-gray-500`;
