@@ -68,7 +68,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({
   heading = "Schau dir die Produkte an",
   tabs = {
-    Starters: [
+    Frühstück: [
       {
         imageSrc:
           "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -150,8 +150,8 @@ export default ({
         url: "#",
       }, */
     ],
-    Main: getRandomCards(),
-    Soup: getRandomCards(),
+    Mittag: getRandomCards(),
+    Desserts: getRandomCards(),
     Desserts: getRandomCards(),
   },
 }) => {
