@@ -81,7 +81,7 @@ export default ({
       <NavLink href="/#">Über uns</NavLink>
       {/* <NavLink href="/#">Blog</NavLink>
       <NavLink href="/#">Pricing</NavLink> */}
-      <NavLink href="/#">Kontakt Us</NavLink>
+      <NavLink href="/#">Kontakt</NavLink>
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink> 
