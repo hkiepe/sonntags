@@ -17,17 +17,24 @@ const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2 rounded leading-
 const TabControl = styled.div`
   ${tw`cursor-pointer px-6 py-3 mt-2 sm:mt-0 sm:mr-2 last:mr-0 text-gray-600 font-medium rounded-sm transition duration-300 text-sm sm:text-base w-1/2 sm:w-auto text-center`}
   &:hover {
-    ${tw`bg-gray-300 text-gray-700`}
+    ${tw`bg-blue-500 text-gray-700`}
   }
-  ${props => props.active && tw`bg-primary-500! text-gray-100!`}
+  ${(props) => props.active && tw`bg-blue-800! text-gray-100!`}
   }
 `;
 
-const TabContent = tw(motion.div)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
+const TabContent = tw(
+  motion.div
+)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
 const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
-const Card = tw(motion.a)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+const Card = tw(
+  motion.a
+)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
 const CardImageContainer = styled.div`
-  ${props => css`background-image: url("${props.imageSrc}");`}
+  ${(props) =>
+    css`
+      background-image: url("${props.imageSrc}");
+    `}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
 const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
@@ -59,30 +66,30 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 `;
 
 export default ({
-  heading = "Checkout the Menu",
+  heading = "Schau dir die Produkte an",
   tabs = {
     Starters: [
       {
         imageSrc:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Veg Mixer",
-        content: "Tomato Salad & Carrot",
-        price: "$5.99",
+          "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Schoko Keks",
+        content: "Kekse und Deserts",
+        price: "EUR 5.99",
         rating: "5.0",
         reviews: "87",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
-          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Macaroni",
-        content: "Cheese Pizza",
-        price: "$2.99",
+          "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=2072&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Roggenbrot",
+        content: "Brote und Frühstück",
+        price: "EUR 2.99",
         rating: "4.8",
         reviews: "32",
-        url: "#"
+        url: "#",
       },
-      {
+      /* {
         imageSrc:
           "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Nelli",
@@ -90,7 +97,7 @@ export default ({
         price: "$7.99",
         rating: "4.9",
         reviews: "89",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
@@ -100,7 +107,7 @@ export default ({
         price: "$8.99",
         rating: "4.6",
         reviews: "12",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
@@ -110,7 +117,7 @@ export default ({
         price: "$7.99",
         rating: "4.2",
         reviews: "19",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
@@ -120,7 +127,7 @@ export default ({
         price: "$2.99",
         rating: "5.0",
         reviews: "61",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
@@ -130,7 +137,7 @@ export default ({
         price: "$3.99",
         rating: "4.2",
         reviews: "95",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
@@ -140,13 +147,13 @@ export default ({
         price: "$3.99",
         rating: "3.9",
         reviews: "26",
-        url: "#"
-      }
+        url: "#",
+      }, */
     ],
     Main: getRandomCards(),
     Soup: getRandomCards(),
-    Desserts: getRandomCards()
-  }
+    Desserts: getRandomCards(),
+  },
 }) => {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
@@ -163,7 +170,11 @@ export default ({
           <Header>{heading}</Header>
           <TabsControl>
             {Object.keys(tabs).map((tabName, index) => (
-              <TabControl key={index} active={activeTab === tabName} onClick={() => setActiveTab(tabName)}>
+              <TabControl
+                key={index}
+                active={activeTab === tabName}
+                onClick={() => setActiveTab(tabName)}
+              >
                 {tabName}
               </TabControl>
             ))}
@@ -176,14 +187,14 @@ export default ({
             variants={{
               current: {
                 opacity: 1,
-                scale:1,
+                scale: 1,
                 display: "flex",
               },
               hidden: {
                 opacity: 0,
-                scale:0.8,
+                scale: 0.8,
                 display: "none",
-              }
+              },
             }}
             transition={{ duration: 0.4 }}
             initial={activeTab === tabKey ? "current" : "hidden"}
@@ -191,7 +202,13 @@ export default ({
           >
             {tabs[tabKey].map((card, index) => (
               <CardContainer key={index}>
-                <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
+                <Card
+                  className="group"
+                  href={card.url}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                >
                   <CardImageContainer imageSrc={card.imageSrc}>
                     <CardRatingContainer>
                       <CardRating>
@@ -204,16 +221,16 @@ export default ({
                       variants={{
                         hover: {
                           opacity: 1,
-                          height: "auto"
+                          height: "auto",
                         },
                         rest: {
                           opacity: 0,
-                          height: 0
-                        }
+                          height: 0,
+                        },
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <CardButton>Buy Now</CardButton>
+                      <CardButton>Jetzt kaufen</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>
                   <CardText>
@@ -238,25 +255,25 @@ const getRandomCards = () => {
   const cards = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Chicken Chilled",
-      content: "Chicken Main Course",
-      price: "$5.99",
+        "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Schoko Keks",
+      content: "Kekse und Deserts",
+      price: "EUR 5.99",
       rating: "5.0",
       reviews: "87",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1582254465498-6bc70419b607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Samsa Beef",
-      content: "Fried Mexican Beef",
-      price: "$3.99",
-      rating: "4.5",
-      reviews: "34",
-      url: "#"
+        "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=2072&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Roggenbrot",
+      content: "Brote und Frühstück",
+      price: "EUR 2.99",
+      rating: "4.8",
+      reviews: "32",
+      url: "#",
     },
-    {
+    /* {
       imageSrc:
         "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Carnet Nachos",
@@ -264,7 +281,7 @@ const getRandomCards = () => {
       price: "$3.99",
       rating: "3.9",
       reviews: "26",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
@@ -274,7 +291,7 @@ const getRandomCards = () => {
       price: "$3.99",
       rating: "4.2",
       reviews: "95",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
@@ -284,7 +301,7 @@ const getRandomCards = () => {
       price: "$2.99",
       rating: "5.0",
       reviews: "61",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
@@ -294,7 +311,7 @@ const getRandomCards = () => {
       price: "$7.99",
       rating: "4.9",
       reviews: "89",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
@@ -304,7 +321,7 @@ const getRandomCards = () => {
       price: "$8.99",
       rating: "4.6",
       reviews: "12",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
@@ -314,8 +331,8 @@ const getRandomCards = () => {
       price: "$7.99",
       rating: "4.2",
       reviews: "19",
-      url: "#"
-    }
+      url: "#",
+    }, */
   ];
 
   // Shuffle array

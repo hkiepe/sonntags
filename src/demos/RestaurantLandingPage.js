@@ -19,7 +19,8 @@ import startpageTop from "../images/sonntags_top.jpeg";
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  // const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-blue-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
@@ -28,8 +29,7 @@ export default () => {
       <Hero
         heading={
           <>
-            Delicious & Affordable{" "}
-            <HighlightedText>Meals Near You.</HighlightedText>
+            Köstlich & Süß <HighlightedText>Im Fedel.</HighlightedText>
           </>
         }
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -37,15 +37,15 @@ export default () => {
         imageSrc={startpageTop}
         imageCss={imageCss}
         imageDecoratorBlob={true}
-        primaryButtonText="Order Now"
-        watchVideoButtonText="Meet The Chefs"
+        primaryButtonText="Jetzt bestellen"
+        watchVideoButtonText="Lerne uns kennen"
       />
       <MainFeature
-        subheading={<Subheading>Established Since 2014</Subheading>}
+        subheading={<Subheading>Gegründet 2014</Subheading>}
         heading={
           <>
-            We've been serving for
-            <wbr /> <HighlightedText>over 5 years.</HighlightedText>
+            Wir liefern seit
+            <wbr /> <HighlightedText>über 5 Jahren.</HighlightedText>
           </>
         }
         description={
@@ -60,9 +60,9 @@ export default () => {
         }
         buttonRounded={false}
         textOnLeft={false}
-        primaryButtonText="Latest Offers"
+        primaryButtonText="Letzte Angebote"
         imageSrc={
-          "https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+          "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
         imageCss={imageCss}
         imageDecoratorBlob={true}
@@ -72,11 +72,11 @@ export default () => {
       <TabGrid
         heading={
           <>
-            Checkout our <HighlightedText>menu.</HighlightedText>
+            Unsere <HighlightedText>Produkte.</HighlightedText>
           </>
         }
       />
-      <Features
+      {/* <Features
         heading={
           <>
             Amazing <HighlightedText>Services.</HighlightedText>
@@ -104,8 +104,8 @@ export default () => {
         ]}
         imageContainerCss={tw`p-2!`}
         imageCss={tw`w-20! h-20!`}
-      />
-      <MainFeature2
+      /> */}
+      {/* <MainFeature2
         subheading={<Subheading>A Reputed Brand</Subheading>}
         heading={
           <>
@@ -135,23 +135,23 @@ export default () => {
         imageDecoratorBlob={true}
         imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
         textOnLeft={true}
-      />
+      /> */}
       <Testimonial
         subheading=""
         heading={
           <>
-            Customers <HighlightedText>Love Us.</HighlightedText>
+            Kunden <HighlightedText>lieben uns.</HighlightedText>
           </>
         }
       />
-      <DownloadApp
+      {/* <DownloadApp
         text={
           <>
             People around you are ordering delicious meals using the{" "}
             <HighlightedTextInverse>Treact App.</HighlightedTextInverse>
           </>
         }
-      />
+      /> */}
       <Footer />
     </AnimationRevealPage>
   );
