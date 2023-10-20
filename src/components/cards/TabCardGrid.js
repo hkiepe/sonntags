@@ -152,7 +152,7 @@ export default ({
     ],
     Mittag: getRandomCards(),
     Desserts: getRandomCards(),
-    Desserts: getRandomCards(),
+    Kaffee: getRandomCards(),
   },
 }) => {
   /*
